@@ -12,3 +12,13 @@ dados.columns = ['Data', 'Temperatura']
 temps = dados['Temperatura'].values.astype(float)
 h = temps[:-1].reshape(-1, 1)
 a = temps[1:]
+
+##Construir o modelo de rede neural
+modelo = keras.Sequential([
+    keras.layers.Dense(8, activation = 'relu', input_shape = [1]),
+    keras.layers.Dense(1)
+])
+modelo.compile(optimizer = 'adam', loss = 'mse')
+
+#Treinar o modelo
+modelo.fit(h, a, epochs = 500, verbose = 0)
