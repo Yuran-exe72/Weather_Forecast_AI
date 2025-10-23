@@ -1,0 +1,38 @@
+Relatório do Projecto Previsão do Tempo com Rede Neural Artificial
+Este projecto tem como objetivo criar um programa que consiga prever a temperatura do dia seguinte com base em dados de temperaturas anterioes. Foi usada uma rede neural artificial simples feito com a biblioteca TensorFlow/Keras que aprende os padrões nos dados e tenta prever os valores futuros.
+
+1.Objectivo do Projecto
+  O objectivo principal é aplicar oque foi aprendido sobre AM(Aprendizagem de máquina), desenvolevendo um pequeno modelo inteligente que possa realizar previsões.
+ A escolha do tema foi feita porque é um exemplo prático e fácill de entender, além de mostrar como a inteligência artificial pode ser usada para resolver problemas do mundo real.
+
+2. Conjunto de dados
+O conjunto de dados usado está no arquivo data/temperaturas.csv.
+O arquivo contém duas colunas que são Data e  Temperatura
+ Antes de usar os dados foi feito um pequeno método:
+⦁	Foram eliminadas linhas com erros ou valores em estavam em falta;
+⦁	Os valores da temperatura foi usada pra criar duas listas, uma com a temperatura do dia atual e a outra com a temperatura com temperatura do dia seguinte.
+
+
+3.Modelos Utilizados
+Foi criado uma rede neural artificial simples com duas camadas.
+ A primeira camada que tem 8 neurónios e usa a função de activação RELU que ajuda o modelo neural a aprender padrões nos dados.
+ A segunda camada tem 1 neurónio que é responsável por gerar a previsão. 
+Este modelo foi treinado usando um optimizador Adam e o erro médio quadrático(MSE) como medida do desempenho.
+
+4.Resultados Obtidos
+Depois de treinar o modelo ele conseguiu fazer previsões próximas dos valores reais.
+ Foi gerado um gráfico que mostra duas linhas:
+⦁	A linha azul que significa a temperatura real;
+⦁	E a linha laranja tracejada mostra a temperatura que o modelo previu.
+O modelo neural artificial aprendeu correctamente o comportamento geral das temperaturas, mostrando que redes neurais conseguem capturar padrões nos dados.
+
+
+5.Ferramentas Utilizadas
+⦁	Python
+⦁	Bibliotecas TensorFlow / Keras
+⦁	Pandas
+⦁	Matplotlib
+⦁	VS Code
+
+No projecto foi possível perceber como um rede neural pode ser usada para prever valores numéricos ou seja, temperaturas. Apesar do modelo ser simples cumpriu o objective e mostrou resultado bons.
+Como melhoria futura, o modelo pode ser expandido para prever outros factores como humidade, vento etc, também pode ser feito uma interface gráfica do modelo para exibir previsões de forma amigável.
