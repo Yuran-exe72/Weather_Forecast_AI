@@ -5,7 +5,7 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 
 #Carregar dados do modelo
-dados = pd.read_csv('Data/weather_data.csv')
+dados = pd.read_csv('data/temperaturas.csv')
 dados.columns = ['Data', 'Temperatura']
 
 #Preparar as temperaturas h(Hoje) e a(Amanhã)
@@ -22,3 +22,12 @@ modelo.compile(optimizer = 'adam', loss = 'mse')
 
 #Treinar o modelo
 modelo.fit(h, a, epochs = 500, verbose = 0)
+
+##Fazer previsões no modelo
+pred = modelo.predict(h).flatten()
+plt.figure(figsize = (8, 4))
+plt.plot(a, label = 'Temperatura Real')
+plt.plot(pred, label = 'Temperatura Prevista', linestyle = '--')
+plt.legend()
+plt.title('Previsão de Temperaturas')
+plt.show()
