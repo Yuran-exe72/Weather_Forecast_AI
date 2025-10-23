@@ -5,10 +5,12 @@ from tensorflow import keras
 import matplotlib.pyplot as plt
 
 #Carregar dados do modelo
-dados = pd.read_csv('data/temperaturas.csv')
+dados = pd.read_csv('data/temperaturas.csv', on_bad_lines = 'skip')
 dados.columns = ['Data', 'Temperatura']
 
 #Preparar as temperaturas h(Hoje) e a(Amanhã)
+dados['Temperatura'] = pd.to_numeric(dados['Temperatura'], errors = 'coerce')
+dados = dados.dropna()
 temps = dados['Temperatura'].values.astype(float)
 h = temps[:-1].reshape(-1, 1)
 a = temps[1:]
